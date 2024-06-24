@@ -9,6 +9,6 @@ Then, open a terminal and tyoe the command `pip install customtkinter pygame req
 
 After that, ensure all code in the repository is in the same folder, and in the terminal, enter the command `python3 setup.py py2app`. 
 
-Once that is complete, the built app should be in the `dist` folder generated from the last command. Open this file, and copy it to the `Applications` folder on your Mac.
+Once that is complete, the built app should be in the `dist` folder generated from the last command. You should see the file `Pomodoro Timer.app`. Copy it to the `Applications` folder on your Mac.
 
 Open the app and enjoy!
