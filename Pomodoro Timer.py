@@ -100,7 +100,7 @@ class PomodoroApp:
     def update_quote(self):
         # Fetch a motivational quote from the API
         try:
-            response = requests.get("https://api.quotable.io/random?tags=motivational")
+            response = requests.get("https://api.quotable.io/quotes/random?tags=motivational")
             data = response.json()
             self.quote = data["content"] + " - " + data["author"]
             self.quote_label.configure(text=self.quote)
