@@ -17,17 +17,17 @@ def format_time(time_left):
 class PomodoroApp:
     def __init__(self, master):
         self.master = master
-        self.config_file = "config.json"  # Configuration file to save user settings
+        self.config_file = "config.json" 
 
         self.work_time = 50 * 60  # Default work time in seconds
         self.break_time = 10 * 60  # Default break time in seconds
-        self.paused = True  # Start with the timer paused
-        self.working = True  # Initial state is working mode
-        self.quote = ""  # Variable to store motivational quotes
-        self.button_color = ""  # Variable to store button color
+        self.paused = True  
+        self.working = True  
+        self.quote = ""  
+        self.button_color = ""  
         # Dictionary to store predefined colors
         self.colors = {"Default": "#1f538d", "Red": "#C50000", "Blue": "#0300B6", "Green": "#028E02", "Pink": "#FF17ED"}
-        self.theme_color = ""  # Variable to store the theme color
+        self.theme_color = ""  
 
         # Load settings from config file
         self.load_settings()
@@ -52,12 +52,12 @@ class PomodoroApp:
         self.settings_button = ctk.CTkButton(master, text="Settings", fg_color=self.colors[self.button_color], command=self.settings)
         self.settings_button.pack(fill='both', padx=10, pady=7, expand=True)
 
-        self.update_time()  # Start updating the time
-        self.update_quote()  # Fetch a motivational quote
+        self.update_time()  
+        self.update_quote()  
 
         # Initialize mixer for playing sounds
         mixer.init()
-        self.sound = mixer.Sound('chime.mp3')  # Load a sound file
+        self.sound = mixer.Sound('chime.mp3') 
 
         # Start the countdown thread
         self.thread = Thread(target=self.countdown)
@@ -92,7 +92,7 @@ class PomodoroApp:
 
     def adjust_window_size(self):
         # Adjust the window size based on the quote length
-        self.quote_label.update_idletasks()  # Ensure the quote label size is updated
+        self.quote_label.update_idletasks() 
         quote_height = self.quote_label.winfo_height()
         new_height = 220 + (quote_height - 40)
         self.master.geometry(f'400x{new_height}')
